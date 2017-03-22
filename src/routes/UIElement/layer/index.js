@@ -16,7 +16,7 @@ const IcoPage = () => {
     } else if (key === Enum.default) {
       layer.open({
         title: '默认弹层',
-        content: <div style={{ height: 360 }}>弹层内容</div>,
+        content: <div style={{ height: 360 }}>弹层内容1234</div>,
       })
     }
   }

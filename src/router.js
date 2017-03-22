@@ -19,7 +19,7 @@ const Routers = function ({ history, app }) {
         require.ensure([], require => {
           registerModel(app, require('./models/dashboard'))
           cb(null, { component: require('./routes/dashboard/') })
-        })
+        }, 'dashboard') //dashboard 是chunkName
       },
       childRoutes: [
         {
@@ -29,7 +29,7 @@ const Routers = function ({ history, app }) {
             require.ensure([], require => {
               registerModel(app, require('./models/dashboard'))
               cb(null, require('./routes/dashboard/'))
-            })
+            }, 'dashboard')
           },
         }, {
           path: 'users',
