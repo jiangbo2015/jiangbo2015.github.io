@@ -2,28 +2,24 @@ import React, { PropTypes } from 'react'
 import { Button, Row, Form, Input } from 'antd'
 import { config } from '../../utils'
 import styles from './index.less'
-
 const FormItem = Form.Item
-
 const login = ({
-  loginButtonLoading,
-  onOk,
-  form: {
-    getFieldDecorator,
-    validateFieldsAndScroll,
-  },
+    loginButtonLoading,
+    onOk,
+    form: {
+        getFieldDecorator,
+        validateFieldsAndScroll,
+    },
 }) => {
-  function handleOk () {
-    validateFieldsAndScroll((errors, values) => {
-      if (errors) {
-        return
-      }
-      onOk(values)
-    })
-  }
-
-  return (
-    <div className={styles.form}>
+    function handleOk() {
+        validateFieldsAndScroll((errors, values) => {
+            if (errors) {
+                return
+            }
+            onOk(values)
+        })
+    }
+    return (<div className={styles.form}>
       <div className={styles.logo}>
         <img alt={'logo'} src={config.logoSrc} />
         <span>Ant Design</span>
@@ -59,14 +55,11 @@ const login = ({
           <span>密码：guest</span>
         </p>
       </form>
-    </div>
-  )
+    </div>)
 }
-
 login.propTypes = {
-  form: PropTypes.object,
-  loginButtonLoading: PropTypes.bool,
-  onOk: PropTypes.func,
+    form: PropTypes.object,
+    loginButtonLoading: PropTypes.bool,
+    onOk: PropTypes.func,
 }
-
 export default Form.create()(login)
